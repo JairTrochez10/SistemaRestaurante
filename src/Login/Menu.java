@@ -63,36 +63,43 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU");
 
-        jPanel1.setBackground(new java.awt.Color(133, 27, 37));
+        jPanel1.setBackground(new java.awt.Color(30, 40, 65));
 
-        jPanel2.setBackground(new java.awt.Color(133, 27, 37));
+        jPanel2.setBackground(new java.awt.Color(20, 25, 43));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(212, 175, 55));
         jLabel1.setText("Menu Principal");
 
-        btnProducto.setBackground(new java.awt.Color(102, 102, 102));
+        btnProducto.setBackground(new java.awt.Color(44, 44, 44));
         btnProducto.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnProducto.setForeground(new java.awt.Color(212, 175, 55));
         btnProducto.setText("Productos");
 
-        btnCliente.setBackground(new java.awt.Color(102, 102, 102));
+        btnCliente.setBackground(new java.awt.Color(44, 44, 44));
         btnCliente.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnCliente.setForeground(new java.awt.Color(212, 175, 55));
         btnCliente.setText("Cliente");
 
-        btnInventario.setBackground(new java.awt.Color(102, 102, 102));
+        btnInventario.setBackground(new java.awt.Color(44, 44, 44));
         btnInventario.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnInventario.setForeground(new java.awt.Color(212, 175, 55));
         btnInventario.setText("Inventario");
 
-        btnUsuarios.setBackground(new java.awt.Color(102, 102, 102));
+        btnUsuarios.setBackground(new java.awt.Color(44, 44, 44));
         btnUsuarios.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnUsuarios.setForeground(new java.awt.Color(212, 175, 55));
         btnUsuarios.setText("Usuarios");
         btnUsuarios.addActionListener(this::btnUsuariosActionPerformed);
 
-        btnHistorial.setBackground(new java.awt.Color(102, 102, 102));
+        btnHistorial.setBackground(new java.awt.Color(44, 44, 44));
         btnHistorial.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnHistorial.setForeground(new java.awt.Color(212, 175, 55));
         btnHistorial.setText("Historial");
 
         lbinfo.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        lbinfo.setForeground(new java.awt.Color(212, 175, 55));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

@@ -40,35 +40,41 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
 
-        jPanel1.setBackground(new java.awt.Color(133, 27, 37));
+        jPanel1.setBackground(new java.awt.Color(30, 40, 65));
 
-        jPanel2.setBackground(new java.awt.Color(133, 27, 37));
+        jPanel2.setBackground(new java.awt.Color(20, 25, 43));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(212, 175, 55));
         jLabel1.setText("Restaurante Rimberio");
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(212, 175, 55));
         jLabel2.setText("Iniciar Sesion");
 
         jLabel3.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(212, 175, 55));
         jLabel3.setText("User:");
 
         txtUser.setBackground(new java.awt.Color(102, 102, 102));
         txtUser.setFont(new java.awt.Font("Segoe UI Symbol", 1, 18)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(212, 175, 55));
         jLabel4.setText("Password:");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/LogoSistema.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/LogoNuevo.png"))); // NOI18N
 
-        btnSalir.setBackground(new java.awt.Color(102, 102, 102));
+        btnSalir.setBackground(new java.awt.Color(44, 44, 44));
         btnSalir.setFont(new java.awt.Font("Modern No. 20", 1, 18)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(212, 175, 55));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(this::btnSalirActionPerformed);
 
-        btnIngresar.setBackground(new java.awt.Color(102, 102, 102));
+        btnIngresar.setBackground(new java.awt.Color(44, 44, 44));
         btnIngresar.setFont(new java.awt.Font("Modern No. 20", 1, 18)); // NOI18N
+        btnIngresar.setForeground(new java.awt.Color(212, 175, 55));
         btnIngresar.setText("Ingresar");
         btnIngresar.addActionListener(this::btnIngresarActionPerformed);
 
@@ -78,31 +84,27 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(239, 239, 239))
+                        .addGap(122, 122, 122))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(117, 117, 117))))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel5)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtPass)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtUser))
-                .addGap(160, 160, 160))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtPass)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(17, 17, 17)))
+                .addGap(0, 62, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +137,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(466, 466, 466)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(1259, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -72,13 +72,13 @@ public class Usuarios extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FORM USUARIOS");
 
-        jPanel1.setBackground(new java.awt.Color(133, 27, 37));
+        jPanel1.setBackground(new java.awt.Color(30, 40, 65));
 
         btnAtras.setBackground(new java.awt.Color(102, 102, 102));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Atras.png"))); // NOI18N
         btnAtras.addActionListener(this::btnAtrasActionPerformed);
 
-        jPanel3.setBackground(new java.awt.Color(133, 27, 37));
+        jPanel3.setBackground(new java.awt.Color(20, 25, 43));
 
         txtBuscar.setBackground(new java.awt.Color(102, 102, 102));
         txtBuscar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -112,34 +112,40 @@ public class Usuarios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbUsuarios);
 
-        jPanel2.setBackground(new java.awt.Color(133, 27, 37));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Agregar Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 3, 18))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(20, 25, 43));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Agregar Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 3, 18), new java.awt.Color(212, 175, 55))); // NOI18N
         jPanel2.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
 
         txtUsuario.setBackground(new java.awt.Color(102, 102, 102));
         txtUsuario.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(212, 175, 55));
         jLabel1.setText("Usuario:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(212, 175, 55));
         jLabel2.setText("Contraseña:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(212, 175, 55));
         jLabel3.setText("Rol:");
 
-        btnEliminar.setBackground(new java.awt.Color(102, 102, 102));
+        btnEliminar.setBackground(new java.awt.Color(44, 44, 44));
         btnEliminar.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(212, 175, 55));
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(this::btnEliminarActionPerformed);
 
-        btnModificar.setBackground(new java.awt.Color(102, 102, 102));
+        btnModificar.setBackground(new java.awt.Color(44, 44, 44));
         btnModificar.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(212, 175, 55));
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(this::btnModificarActionPerformed);
 
-        btnGuardar.setBackground(new java.awt.Color(102, 102, 102));
+        btnGuardar.setBackground(new java.awt.Color(44, 44, 44));
         btnGuardar.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(212, 175, 55));
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
@@ -147,9 +153,10 @@ public class Usuarios extends javax.swing.JFrame {
         txtContrasena.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         txtContrasena.addActionListener(this::txtContrasenaActionPerformed);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/LogoSistema.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/LogoNuevo.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(212, 175, 55));
         jLabel5.setText("Id:");
 
         txtId.setBackground(new java.awt.Color(102, 102, 102));
@@ -159,8 +166,9 @@ public class Usuarios extends javax.swing.JFrame {
         cmbRol.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "mesero" }));
 
-        btnLimpiar.setBackground(new java.awt.Color(102, 102, 102));
+        btnLimpiar.setBackground(new java.awt.Color(44, 44, 44));
         btnLimpiar.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(212, 175, 55));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
 
@@ -227,6 +235,7 @@ public class Usuarios extends javax.swing.JFrame {
         );
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(212, 175, 55));
         jLabel4.setText("Buscar:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -243,7 +252,7 @@ public class Usuarios extends javax.swing.JFrame {
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
