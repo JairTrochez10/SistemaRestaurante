@@ -17,6 +17,7 @@ public class Usuarios extends javax.swing.JFrame {
         setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         cargarTabla(cntdao.listarTodos());
         txtId.setEnabled(false);
+        cmbRol.setSelectedItem("-Seleccione Una Opcion-");
     }
     public void cargarTabla(ArrayList<usuario.Contacto> lista) {
         DefaultTableModel modelo = new DefaultTableModel();
@@ -60,11 +61,12 @@ public class Usuarios extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        txtRol = new javax.swing.JTextField();
         txtContrasena = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
+        cmbRol = new javax.swing.JComboBox<>();
+        btnLimpiar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -141,9 +143,6 @@ public class Usuarios extends javax.swing.JFrame {
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
-        txtRol.setBackground(new java.awt.Color(102, 102, 102));
-        txtRol.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-
         txtContrasena.setBackground(new java.awt.Color(102, 102, 102));
         txtContrasena.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         txtContrasena.addActionListener(this::txtContrasenaActionPerformed);
@@ -155,6 +154,15 @@ public class Usuarios extends javax.swing.JFrame {
 
         txtId.setBackground(new java.awt.Color(102, 102, 102));
         txtId.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+
+        cmbRol.setBackground(new java.awt.Color(102, 102, 102));
+        cmbRol.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "mesero" }));
+
+        btnLimpiar.setBackground(new java.awt.Color(102, 102, 102));
+        btnLimpiar.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -168,26 +176,26 @@ public class Usuarios extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtUsuario)
-                                    .addComponent(txtContrasena)
-                                    .addComponent(txtRol, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtId, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(btnGuardar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnEliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnModificar)
-                                .addGap(35, 35, 35)))))
-                .addContainerGap(37, Short.MAX_VALUE))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+                            .addComponent(txtContrasena)
+                            .addComponent(txtId, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cmbRol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(btnGuardar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnModificar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnLimpiar)))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,15 +212,16 @@ public class Usuarios extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(txtRol, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmbRol))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
                     .addComponent(btnEliminar)
-                    .addComponent(btnModificar))
+                    .addComponent(btnModificar)
+                    .addComponent(btnLimpiar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -234,7 +243,7 @@ public class Usuarios extends javax.swing.JFrame {
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,7 +325,7 @@ public class Usuarios extends javax.swing.JFrame {
             txtId.setText(tbUsuarios.getValueAt(fila, 0).toString());
             txtUsuario.setText(tbUsuarios.getValueAt(fila, 1).toString());
             txtContrasena.setText(tbUsuarios.getValueAt(fila, 2).toString());
-            txtRol.setText(tbUsuarios.getValueAt(fila, 3).toString());
+            cmbRol.setSelectedItem(tbUsuarios.getValueAt(fila, 3).toString());
         }
 
     }//GEN-LAST:event_tbUsuariosMouseClicked
@@ -335,14 +344,14 @@ public class Usuarios extends javax.swing.JFrame {
     
         usuario.usuario = txtUsuario.getText();
         usuario.contrasena = txtContrasena.getText();
-        usuario.rol = txtRol.getText();
+        usuario.rol = cmbRol.getSelectedItem().toString();
 
         if (dao.insertar(usuario)) {
             JOptionPane.showMessageDialog(this, "Usuario agregado correctamente");
             cargarTabla(cntdao.listarTodos()); // si tienes un método para recargar la tabla
             txtUsuario.setText("");
             txtContrasena.setText("");
-            txtRol.setText("");
+            cmbRol.setSelectedItem("");
         } else {
             JOptionPane.showMessageDialog(this, "Error al agregar usuario");
         }
@@ -365,7 +374,7 @@ public class Usuarios extends javax.swing.JFrame {
         usuario.id = Integer.parseInt(txtId.getText());
         usuario.usuario = txtUsuario.getText();
         usuario.contrasena = txtContrasena.getText();
-        usuario.rol = txtRol.getText();
+        usuario.rol = cmbRol.getSelectedItem().toString();
 
         if (dao.modificar(usuario)) {
                 JOptionPane.showMessageDialog(this, "Usuario modificado correctamente");
@@ -373,7 +382,7 @@ public class Usuarios extends javax.swing.JFrame {
                 txtId.setText("");
                 txtUsuario.setText("");
                 txtContrasena.setText("");
-                txtRol.setText("");
+                cmbRol.setSelectedItem("");
         } else {
                 JOptionPane.showMessageDialog(this, "Error al modificar usuario");
         }
@@ -394,15 +403,22 @@ public class Usuarios extends javax.swing.JFrame {
                 txtId.setText("");
 		txtUsuario.setText("");
 		txtContrasena.setText("");
-		txtRol.setText("");
+		cmbRol.setSelectedItem("");
 	} else {
 		JOptionPane.showMessageDialog(this, "Error al eliminar usuario");
 	}
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
-    }
-    /**
-     * @param args the command line arguments
-     */
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        txtId.setText("");
+        txtUsuario.setText("");
+        txtContrasena.setText("");
+        cmbRol.setSelectedItem("");
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -429,7 +445,9 @@ public class Usuarios extends javax.swing.JFrame {
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JComboBox<String> cmbRol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -444,7 +462,6 @@ public class Usuarios extends javax.swing.JFrame {
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtRol;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
