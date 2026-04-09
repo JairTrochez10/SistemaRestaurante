@@ -2,6 +2,7 @@ package Login;
 
 
 import Login.Login;
+import cliente.Cliente;
 import usuario.Usuarios;
 
 
@@ -81,6 +82,7 @@ public class Menu extends javax.swing.JFrame {
         btnCliente.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnCliente.setForeground(new java.awt.Color(212, 175, 55));
         btnCliente.setText("Cliente");
+        btnCliente.addActionListener(this::btnClienteActionPerformed);
 
         btnInventario.setBackground(new java.awt.Color(44, 44, 44));
         btnInventario.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -206,6 +208,13 @@ public class Menu extends javax.swing.JFrame {
         formUsuarios.setVisible(true);          // muestra el JFrame
         this.dispose();                         // opcional: cierra el Menu
     }//GEN-LAST:event_btnUsuariosActionPerformed
+
+    private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
+        // TODO add your handling code here:
+        Cliente formCliente = new Cliente(rol);
+        formCliente.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnClienteActionPerformed
 
     /**
      * @param args the command line arguments
