@@ -3,6 +3,7 @@ package Login;
 
 import Login.Login;
 import cliente.Cliente;
+import inventario.Inventario;
 import productos.Producto;
 import usuario.Usuarios;
 
@@ -87,6 +88,7 @@ public class Menu extends javax.swing.JFrame {
         btnInventario.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnInventario.setForeground(new java.awt.Color(212, 175, 55));
         btnInventario.setText("Inventario");
+        btnInventario.addActionListener(this::btnInventarioActionPerformed);
 
         btnUsuarios.setBackground(new java.awt.Color(44, 44, 44));
         btnUsuarios.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -211,6 +213,13 @@ public class Menu extends javax.swing.JFrame {
         prod.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnProductoActionPerformed
+
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        // TODO add your handling code here:
+        Inventario inv = new Inventario(rol);
+        inv.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
     /**
      * @param args the command line arguments

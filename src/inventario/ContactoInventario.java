@@ -90,7 +90,7 @@ public ArrayList<Contacto> listarTodos() {
     // Consulta SQL:
     // selecciona las columnas id, nombre, telefono, correo y direccion
     // de la tabla contactos
-    String sql = "SELECT id,id_producto,stock FROM inventario";
+    String sql = "SELECT id,id_producto,stock,fecha_registro FROM inventario";
 
     try {
         // Abre la conexión con la base de datos
@@ -109,7 +109,8 @@ public ArrayList<Contacto> listarTodos() {
             Contacto c = new Contacto(
                 rs.getInt("id"), 
                 rs.getInt("id_producto"), 
-                rs.getInt("stock")
+                rs.getInt("stock"),
+                    rs.getString("fecha_registro")
             );
 
             // Agrega ese contacto a la lista
@@ -144,7 +145,7 @@ public ArrayList<Contacto> buscarPorNombre(String nombre) {
     // de la tabla contactos
     // donde el nombre coincida con el texto buscado
     
-    String sql = "SELECT id,id_producto,stock  FROM inventario WHERE id_producto LIKE ?";
+    String sql = "SELECT id,id_producto,stock,fecha_registro  FROM inventario WHERE id_producto LIKE ?";
 
     // Esta era la versión para buscar por nombre o teléfono
     // String sql = "SELECT id, nombre, telefono, correo, direccion FROM contactos WHERE nombre LIKE ? or telefono LIKE ?";
@@ -176,7 +177,8 @@ public ArrayList<Contacto> buscarPorNombre(String nombre) {
             Contacto c = new Contacto(
                 rs.getInt("id"), 
                 rs.getInt("id_producto"), 
-                rs.getInt("stock")
+                rs.getInt("stock"),
+                rs.getString("fecha_registro")
             );
 
             // Agrega el contacto encontrado a la lista

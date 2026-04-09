@@ -5,6 +5,7 @@ public class Contacto {
     int id;
     int id_producto;
     int stock;
+    public String fecha_registro;
     
     public Contacto(){}
     
@@ -12,15 +13,17 @@ public class Contacto {
         this.id=id;
     }
 
-    public Contacto(int id_producto, int stock) {
+    public Contacto(int id_producto, int stock,String fecha) {
         this.id_producto = id_producto;
         this.stock = stock;
+        this.fecha_registro=fecha;
     }
 
-    public Contacto(int id, int id_producto, int stock) {
+    public Contacto(int id, int id_producto, int stock,String fecha) {
         this.id = id;
         this.id_producto = id_producto;
         this.stock = stock;
+        this.fecha_registro=fecha;
     }
 
     public int getId() {
@@ -45,6 +48,14 @@ public class Contacto {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public String getFecha_registro() {
+        return fecha_registro;
+    }
+
+    public void setFecha_registro(String fecha_registro) {
+        this.fecha_registro = fecha_registro;
     }
     
     
