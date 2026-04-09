@@ -23,7 +23,12 @@ public class Usuarios extends javax.swing.JFrame {
         txtId.setEnabled(false);
     }
     public void cargarTabla(ArrayList<usuario.Contacto> lista) {
-        DefaultTableModel modelo = new DefaultTableModel();
+        DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int column){
+            return false;
+        }
+    };
 
         modelo.addColumn("ID");
         modelo.addColumn("Usuario");

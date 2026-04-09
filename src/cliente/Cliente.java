@@ -26,7 +26,12 @@ public class Cliente extends javax.swing.JFrame {
         
     }
     public void cargarTabla(ArrayList<cliente.Contacto> lista) {
-        DefaultTableModel modelo = new DefaultTableModel();
+        DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int column){
+            return false;
+        }
+    };
 
         modelo.addColumn("ID");
         modelo.addColumn("Dni");

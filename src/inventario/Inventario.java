@@ -23,6 +23,7 @@ public class Inventario extends javax.swing.JFrame {
         setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         cargarTabla(cntdao.listarTodos());
         txtId.setEnabled(false);
+        txtFecha.setEnabled(false);
         configurarPermisos();
         
     }
@@ -41,7 +42,12 @@ public class Inventario extends javax.swing.JFrame {
 		}
 	}
     public void cargarTabla(ArrayList<inventario.Contacto> lista) {
-        DefaultTableModel modelo = new DefaultTableModel();
+        DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int column){
+            return false;
+        }
+    };
 
         modelo.addColumn("ID");
         modelo.addColumn("ID Producto");
