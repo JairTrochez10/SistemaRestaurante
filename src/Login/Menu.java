@@ -3,6 +3,7 @@ package Login;
 
 import Login.Login;
 import cliente.Cliente;
+import productos.Producto;
 import usuario.Usuarios;
 
 
@@ -28,14 +29,12 @@ public class Menu extends javax.swing.JFrame {
                     btnCliente.setEnabled(true);
                     btnProducto.setEnabled(true);
                     btnInventario.setEnabled(true);
-                    btnHistorial.setEnabled(true);
                     lbinfo.setText(rol);
 		} else if (rol.equals("mesero")) {
                     btnUsuarios.setEnabled(false);
                     btnCliente.setEnabled(true);
                     btnProducto.setEnabled(true);
                     btnInventario.setEnabled(false);
-                    btnHistorial.setEnabled(false);
                     lbinfo.setText(rol);
 		}
 	}
@@ -57,7 +56,6 @@ public class Menu extends javax.swing.JFrame {
         btnCliente = new javax.swing.JButton();
         btnInventario = new javax.swing.JButton();
         btnUsuarios = new javax.swing.JButton();
-        btnHistorial = new javax.swing.JButton();
         lbinfo = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
 
@@ -77,6 +75,7 @@ public class Menu extends javax.swing.JFrame {
         btnProducto.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnProducto.setForeground(new java.awt.Color(212, 175, 55));
         btnProducto.setText("Productos");
+        btnProducto.addActionListener(this::btnProductoActionPerformed);
 
         btnCliente.setBackground(new java.awt.Color(44, 44, 44));
         btnCliente.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -95,11 +94,6 @@ public class Menu extends javax.swing.JFrame {
         btnUsuarios.setText("Usuarios");
         btnUsuarios.addActionListener(this::btnUsuariosActionPerformed);
 
-        btnHistorial.setBackground(new java.awt.Color(44, 44, 44));
-        btnHistorial.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        btnHistorial.setForeground(new java.awt.Color(212, 175, 55));
-        btnHistorial.setText("Historial");
-
         lbinfo.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         lbinfo.setForeground(new java.awt.Color(212, 175, 55));
 
@@ -107,27 +101,24 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 599, Short.MAX_VALUE)
+                .addComponent(lbinfo))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
-                .addContainerGap(99, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(155, 155, 155))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(212, 212, 212))
-                    .addComponent(lbinfo, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(80, 80, 80)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,9 +133,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(lbinfo))
         );
 
@@ -216,6 +205,13 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnClienteActionPerformed
 
+    private void btnProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoActionPerformed
+        // TODO add your handling code here:
+        Producto prod = new Producto(rol);
+        prod.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnProductoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -227,7 +223,6 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCliente;
-    private javax.swing.JButton btnHistorial;
     private javax.swing.JButton btnInventario;
     private javax.swing.JButton btnProducto;
     private javax.swing.JButton btnUsuarios;

@@ -213,6 +213,7 @@ public class Cliente extends javax.swing.JFrame {
         txtDireccion.setBackground(new java.awt.Color(102, 102, 102));
         txtDireccion.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
 
+        txtId.setEditable(false);
         txtId.setBackground(new java.awt.Color(102, 102, 102));
         txtId.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
 
@@ -418,7 +419,7 @@ public class Cliente extends javax.swing.JFrame {
         cliente.direccion = txtDireccion.getText();
 
         if (dao.insertar(cliente)) {
-            JOptionPane.showMessageDialog(this, "Usuario agregado correctamente");
+            JOptionPane.showMessageDialog(this, "Cliente agregado correctamente");
             cargarTabla(cntdao.listarTodos()); // si tienes un método para recargar la tabla
             txtId.setText("");
             txtDni.setText("");
@@ -429,7 +430,7 @@ public class Cliente extends javax.swing.JFrame {
             txtDireccion.setText("");
             
         } else {
-            JOptionPane.showMessageDialog(this, "Error al agregar usuario");
+            JOptionPane.showMessageDialog(this, "Error al agregar Cliente");
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -437,7 +438,7 @@ public class Cliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         ContactoCliente dao = new ContactoCliente();
         Contacto cliente = new Contacto();
-        int opcion = JOptionPane.showConfirmDialog(this, "¿Está seguro de modificar este usuario?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int opcion = JOptionPane.showConfirmDialog(this, "¿Está seguro de modificar este Cliente?", "Confirmar", JOptionPane.YES_NO_OPTION);
 
         if(opcion != JOptionPane.YES_OPTION){
                 return;
@@ -452,7 +453,7 @@ public class Cliente extends javax.swing.JFrame {
         cliente.direccion = txtDireccion.getText();
 
         if (dao.modificar(cliente)) {
-                JOptionPane.showMessageDialog(this, "Usuario modificado correctamente");
+                JOptionPane.showMessageDialog(this, "Cliente modificado correctamente");
                 cargarTabla(dao.listarTodos());
                 txtId.setText("");
                 txtDni.setText("");
@@ -462,7 +463,7 @@ public class Cliente extends javax.swing.JFrame {
                 txtEmail.setText("");
                 txtDireccion.setText("");
         } else {
-                JOptionPane.showMessageDialog(this, "Error al modificar usuario");
+                JOptionPane.showMessageDialog(this, "Error al modificar Cliente");
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
@@ -472,11 +473,11 @@ public class Cliente extends javax.swing.JFrame {
 
         int id = Integer.parseInt(txtId.getText());
 
-        int opcion = JOptionPane.showConfirmDialog(this, "¿Está seguro de eliminar este usuario?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int opcion = JOptionPane.showConfirmDialog(this, "¿Está seguro de eliminar este Cliente?", "Confirmar", JOptionPane.YES_NO_OPTION);
 
         if(opcion == JOptionPane.YES_OPTION){
 	if (dao.eliminar(id)) {
-		JOptionPane.showMessageDialog(this, "Usuario eliminado correctamente");
+		JOptionPane.showMessageDialog(this, "Cliente eliminado correctamente");
 		cargarTabla(dao.listarTodos());
                 txtId.setText("");
                 txtDni.setText("");
@@ -486,7 +487,7 @@ public class Cliente extends javax.swing.JFrame {
                 txtEmail.setText("");
                 txtDireccion.setText("");
 	} else {
-		JOptionPane.showMessageDialog(this, "Error al eliminar usuario");
+		JOptionPane.showMessageDialog(this, "Error al eliminar Cliente");
 	}
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
