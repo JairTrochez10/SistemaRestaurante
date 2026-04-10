@@ -113,7 +113,7 @@ public class Producto extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("FORM USUARIOS");
+        setTitle("FORM PRODUCTOS");
 
         jPanel1.setBackground(new java.awt.Color(30, 40, 65));
 
