@@ -32,12 +32,13 @@ public class ContactoInventario {
     }
   }
     public boolean modificar(Contacto contacto){
-	String sql="UPDATE inventario SET id_producto=?, stock=? WHERE id=?";
+	String sql="UPDATE inventario SET id_producto=?, stock=?,fecha_registro=? WHERE id=?";
 	try(Connection cn=Conexion.getConnection();
 		PreparedStatement ps=cn.prepareStatement(sql)){
 		ps.setInt(1, contacto.getId_producto());
 		ps.setInt(2, contacto.getStock());
-		ps.setInt(3, contacto.getId());
+                ps.setString(3, contacto.getFecha_registro());
+		ps.setInt(4, contacto.getId());
 		return ps.executeUpdate()>0;
 	}catch(Exception e){
 		System.out.println(e);

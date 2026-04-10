@@ -4,8 +4,12 @@ import inventario.*;
 import cliente.*;
 import Login.Menu;
 import java.awt.Component;
+import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
@@ -24,6 +28,17 @@ public class Inventario extends javax.swing.JFrame {
         cargarTabla(cntdao.listarTodos());
         txtId.setEnabled(false);
         txtFecha.setEnabled(false);
+        DateTimeFormatter formato =
+        DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+
+        Timer timer = new Timer(1000, new ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            LocalDateTime ahora = LocalDateTime.now();
+            txtFecha.setText(ahora.format(formato));
+        }
+    });
+
+    timer.start();
         configurarPermisos();
         
     }
@@ -365,7 +380,7 @@ public class Inventario extends javax.swing.JFrame {
         txtId.setText(tbProductos.getValueAt(fila, 0) != null ? tbProductos.getValueAt(fila, 0).toString() : "");
         txtProducto.setText(tbProductos.getValueAt(fila, 1) != null ? tbProductos.getValueAt(fila, 1).toString() : "");
         txtStock.setText(tbProductos.getValueAt(fila, 2) != null ? tbProductos.getValueAt(fila, 2).toString() : "");
-        txtFecha.setText(tbProductos.getValueAt(fila, 3) != null ? tbProductos.getValueAt(fila, 3).toString() : "");
+        //txtFecha.setText(tbProductos.getValueAt(fila, 3) != null ? tbProductos.getValueAt(fila, 3).toString() : "");
     }
 
     }//GEN-LAST:event_tbProductosMouseClicked
@@ -392,7 +407,6 @@ public class Inventario extends javax.swing.JFrame {
             txtId.setText("");
             txtProducto.setText("");
             txtStock.setText("");
-            txtFecha.setText("");
             
         } else {
             JOptionPane.showMessageDialog(this, "Error al agregar producto");
@@ -412,6 +426,7 @@ public class Inventario extends javax.swing.JFrame {
         cliente.id = Integer.parseInt(txtId.getText());
         cliente.id_producto = Integer.parseInt(txtProducto.getText());
         cliente.stock = Integer.parseInt(txtStock.getText());
+        cliente.fecha_registro = txtFecha.getText();
 
         if (dao.modificar(cliente)) {
                 JOptionPane.showMessageDialog(this, "Producto modificado correctamente");
@@ -419,7 +434,6 @@ public class Inventario extends javax.swing.JFrame {
                 txtId.setText("");
                 txtProducto.setText("");
                 txtStock.setText("");
-                txtFecha.setText("");
         } else {
                 JOptionPane.showMessageDialog(this, "Error al modificar producto");
         }
@@ -440,7 +454,6 @@ public class Inventario extends javax.swing.JFrame {
                 txtId.setText("");
                 txtProducto.setText("");
                 txtStock.setText("");
-                txtFecha.setText("");
 	} else {
 		JOptionPane.showMessageDialog(this, "Error al eliminar Producto");
 	}
@@ -452,7 +465,6 @@ public class Inventario extends javax.swing.JFrame {
         txtId.setText("");
         txtProducto.setText("");
         txtStock.setText("");
-        txtFecha.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
